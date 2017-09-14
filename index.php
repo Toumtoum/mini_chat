@@ -18,6 +18,21 @@
 
     </head>
     <body>
+      <main>
+        <form action= "" method="post">
+          <div class="form-group">
+            <label>PSEUDO</label>
+            <input type="text" class="form-control" name="nom">
+          </div>
+          <div class="form-group">
+            <label>MESSAGE</label>
+            <textarea class="form-control" rows="5" name="message"></textarea>
+          </div>
+          <button type="submit" class="btn btn-default">ENVOYER</button>
+        </form>
+
+        <div class="display"></div>
+
 
 
         <script src="https://code.jquery.com/jquery-1.12.0.min.js"></script>
