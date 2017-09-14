@@ -44,11 +44,11 @@
           $display = $bdd->query('SELECT * FROM minichat ORDER BY id DESC LIMIT 0,10');
           while ($donnees = $display -> fetch()){
             ?>
-            <p><strong><?php echo $donnees['pseudo'] . ":"?></strong> <?php echo $donnees['message'] ?></p>
+            <p><strong><?php echo $donnees['pseudo'] . " :"?></strong> <?php echo $donnees['message'] ?></p>
 
           <?php
           }
-          
+
           $display->closeCursor();
           ?>
 

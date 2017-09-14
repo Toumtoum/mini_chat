@@ -11,8 +11,8 @@ catch (Exception $e)
 $addBdd = $bdd->prepare('INSERT INTO minichat (pseudo,message) Values(:pseudo , :message)');
 if(!empty($_POST['pseudo']) && !empty($_POST['message'])){
   $addBdd->execute(array(
-  'pseudo'=> $_POST['pseudo'],
-  'message'=> $_POST['message'],
+  'pseudo'=> strip_tags($_POST['pseudo']),
+  'message'=> strip_tags($_POST['message']),
   ));
 }
 
