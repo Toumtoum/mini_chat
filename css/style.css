@@ -11,9 +11,15 @@ main {
 .display{
   background: white;
   width:550px;
-  height: 370px;
+  height: 330px;
   padding: 25px;
   margin-top: 20px;
   overflow: scroll;
   border-radius: 15px;
+}
+
+.btnSection{
+  display: flex;
+  justify-content: space-around;
+
 }

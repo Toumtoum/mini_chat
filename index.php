@@ -1,3 +1,6 @@
+<?php
+session_start();
+ ?>
 <!doctype html>
 <html class="no-js" lang="">
     <head>
@@ -19,16 +22,26 @@
     </head>
     <body>
       <main>
+      <div class="btnSection">
+        <form action= "logOut.php">
+          <button type="submit" class="btn btn-default">DECONNEXION</button>
+          <button class="btn btn-default" onclick="window.location.reload();">REFRESH</button>
+        </form>
+      </div>
         <form action= "minichat_post.php" method="post">
           <div class="form-group">
             <label>PSEUDO</label>
-            <input type="text" class="form-control" name="pseudo">
+            <input type="text" class="form-control" name="pseudo" value= "<?php if (isset($_SESSION['pseudo'])){
+              echo $_SESSION['pseudo'];
+            }
+            else{ echo "";
+              };?>"/>
           </div>
           <div class="form-group">
             <label>MESSAGE</label>
             <textarea class="form-control" rows="5" name="message"></textarea>
           </div>
-          <button type="submit" class="btn btn-default">ENVOYER</button>
+            <button type="submit" class="btn btn-default">ENVOYER</button>
         </form>
 
         <div class="display">
