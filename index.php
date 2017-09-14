@@ -31,7 +31,29 @@
           <button type="submit" class="btn btn-default">ENVOYER</button>
         </form>
 
-        <div class="display"></div>
+        <div class="display">
+          <?php
+          try{
+            $bdd = new PDO('mysql:host=localhost;dbname=test;charset=utf8', 'root' , 'qX7-xM4-z6z-vPb',array(PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION));
+          }
+          catch (Exception $e)
+          {
+            die ('Erreur : ' .$e->getMessage());
+          }
+
+          $display = $bdd->query('SELECT * FROM minichat ORDER BY id DESC LIMIT 0,10');
+          while ($donnees = $display -> fetch()){
+            ?>
+            <p><strong><?php echo $donnees['pseudo'] . ":"?></strong> <?php echo $donnees['message'] ?></p>
+
+          <?php
+          }
+          
+          $display->closeCursor();
+          ?>
+
+        </div>
+      </main>
 
 
 
