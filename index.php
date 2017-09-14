@@ -19,10 +19,10 @@
     </head>
     <body>
       <main>
-        <form action= "" method="post">
+        <form action= "minichat_post.php" method="post">
           <div class="form-group">
             <label>PSEUDO</label>
-            <input type="text" class="form-control" name="nom">
+            <input type="text" class="form-control" name="pseudo">
           </div>
           <div class="form-group">
             <label>MESSAGE</label>
